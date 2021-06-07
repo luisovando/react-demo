@@ -18,7 +18,13 @@ class Counter extends Component {
     }, 1000)
   }
   render () {
-    return <span>{this.props.label} : {this.state.counter}</span>;
+    return <CounterTemplate label={this.props.label} counter={this.state.counter} />
+  }
+}
+
+class CounterTemplate extends Component {
+  render() {
+    return <span>{this.props.label} : {this.props.counter}</span>;
   }
 }
 
