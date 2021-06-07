@@ -1,27 +1,23 @@
-import logo from './logo.svg';
+import {Component} from 'react';
 import './App.css';
-import { Component } from 'react';
 
-class CardInfo extends Component {
-  render() {
-    return <h2>{this.props.description}</h2>;
+class Counter extends Component {
+  constructor () {
+    super ();
+    this.state = {counter: 1};
+  }
+  render () {
+    return <span>{this.props.label} : {this.state.counter}</span>;
   }
 }
 
-/**
- * Set CardInfo default prop values
- */
-CardInfo.defaultProps = {
-  description: 'default value'
-}
-
-function App() {
-  return <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <CardInfo />
-      </header>
-    </div>;
+function App () {
+  return (
+    <div className="App">
+      <h1>Primer componente con state</h1>
+      <Counter label="Cumulative" />
+    </div>
+  );
 }
 
 export default App;
