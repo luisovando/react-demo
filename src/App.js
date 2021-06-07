@@ -1,12 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 
+function MainTitle (props) {
+  return <h1>{props.title}</h1>
+}
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hello world from React</h1>
+        <MainTitle title='Hello world from React!'/>
         <strong>
           Edit <code>src/App.js</code> and save to reload.
         </strong>
