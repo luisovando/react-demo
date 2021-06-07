@@ -2,9 +2,9 @@ import {Component} from 'react';
 import './App.css';
 
 class Counter extends Component {
-  constructor () {
-    super ();
-    this.state = {counter: 1};
+  constructor (props) {
+    super (props);
+    this.state = {counter: this.props.initialCounter};
     /**
      * State facts
      * 1. Is an inmmutable property
@@ -13,26 +13,33 @@ class Counter extends Component {
      */
 
     // Update counter property every second
-    setInterval(() => {
-      this.setState({counter : this.state.counter + 1})
-    }, 1000)
+    setInterval (() => {
+      this.setState ({counter: this.state.counter + 1});
+    }, 1000);
   }
+
   render () {
-    return <CounterTemplate label={this.props.label} counter={this.state.counter} />
+    return (
+      <CounterTemplate label={this.props.label} counter={this.state.counter} />
+    );
   }
 }
 
 class CounterTemplate extends Component {
-  render() {
+  render () {
     return <span>{this.props.label} : {this.props.counter}</span>;
   }
+}
+
+Counter.defaultProps = {
+  initialCounter: 0
 }
 
 function App () {
   return (
     <div className="App">
       <h1>Primer componente con state</h1>
-      <Counter label="Cumulative" />
+      <Counter label="Cumulative" initialCounter={50} />
     </div>
   );
 }
