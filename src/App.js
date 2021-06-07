@@ -1,9 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-function MainTitle (props) {
-  return <h1>{props.title}</h1>
-}
+const MainTitle = (props) => <h1>{props.title}</h1>
 
 function App() {
   return (
