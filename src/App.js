@@ -1,7 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import { Component } from 'react';
 
-const MainTitle = (props) => <h1>{props.title}</h1>
+class MainTitle extends Component {
+  render() {
+    return <h1>{this.props.title}</h1>
+  }
+}
 
 function App() {
   return (
