@@ -2,10 +2,8 @@ import {Component} from 'react';
 import './App.css';
 
 class Counter extends Component {
-  constructor () {
-    super ();
-    this.state = {counter: 1};
-  }
+  state = {counter: 1};
+  
   render () {
     return <span>{this.props.label} : {this.state.counter}</span>;
   }
