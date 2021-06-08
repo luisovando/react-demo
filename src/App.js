@@ -1,12 +1,20 @@
+import {Component} from 'react';
 import './App.css';
 
-function App () {
-  return (
-    <div className="App">
-      <h4>Eventos</h4>
-      <button onClick={() => alert('Hi, guys')}>Hi, there!</button>
-    </div>
-  );
+class App extends Component {
+  handleClick (e) {
+    // console.log(e.nativeEvent) // recovery the native event
+    alert ('Hi, guys');
+  }
+
+  render () {
+    return (
+      <div className="App">
+        <h4>Eventos</h4>
+        <button onClick={this.handleClick}>Hi, there!</button>
+      </div>
+    );
+  }
 }
 
 export default App;
