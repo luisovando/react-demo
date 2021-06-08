@@ -1,10 +1,14 @@
 import './App.css';
-import ConditionalSection from './sections/conditional';
 
 function App () {
+  const numberList = [1,1,3,4,5]
+
   return (
     <div className="App">
-      <ConditionalSection />
+      <h4>Using lists</h4>
+      {numberList.map((number, index) => {
+        return <p key={index}>I'm the number {number}</p>
+      })}
     </div>
   );
 }
