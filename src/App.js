@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import PropTypes from 'prop-types';
 import './App.css';
 
 class Box extends Component {
@@ -12,14 +13,19 @@ class Box extends Component {
 }
 
 class Article extends Component {
+  static propTypes = {
+    author: PropTypes.string.isRequired
+  }
+
   render () {
+    const {author, children, date, title} = this.props
     return (
       <section>
-        <h2>{this.props.title}</h2>
-        <p><em>Author: {this.props.author}</em></p>
-        <Box>{this.props.date}</Box>
+        <h2>{title}</h2>
+        <p><em>Author: {author}</em></p>
+        <Box>{date}</Box>
         <article>
-          {this.props.children}
+          {children}
         </article>
       </section>
     );
@@ -33,7 +39,7 @@ class App extends Component {
       <div className="App">
         <h4>Children props</h4>
         <Article
-          author="Luis"
+          author='Luis Ovando'
           date={new Date ().toLocaleDateString ()}
           title={'The childen props'}
         >
